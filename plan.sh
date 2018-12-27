@@ -11,6 +11,8 @@ pkg_exports=(
    [tsa_port]=ports.tsa
 )
 pkg_exposes=(web_port tsa_port)
+pkg_svc_user="root"
+pkg_svc_group="root"
 
 do_build(){
   return 0
