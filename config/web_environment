@@ -2,6 +2,9 @@
 
 export CONCOURSE_BASIC_AUTH_USERNAME="{{cfg.concourse.username}}"
 export CONCOURSE_BASIC_AUTH_PASSWORD="{{cfg.concourse.password}}"
+export CONCOURSE_ADD_LOCAL_USER="{{cfg.concourse.username}}:{{cfg.concourse.password}}"
+export CONCOURSE_MAIN_TEAM_LOCAL_USER="{{cfg.concourse.username}}"
+export CONCOURSE_MAIN_TEAM_ALLOW_ALL_USERS=true
 {{#if cfg.concourse.external_url}}
 export CONCOURSE_EXTERNAL_URL="{{cfg.concourse.external_url}}"
 {{else ~}}
