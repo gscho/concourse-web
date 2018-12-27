@@ -1,0 +1,17 @@
+#!/bin/bash
+
+export CONCOURSE_BASIC_AUTH_USERNAME="{{cfg.concourse.username}}"
+export CONCOURSE_BASIC_AUTH_PASSWORD="{{cfg.concourse.password}}"
+{{#if cfg.concourse.external_url}}
+export CONCOURSE_EXTERNAL_URL="{{cfg.concourse.external_url}}"
+{{else ~}}
+export CONCOURSE_EXTERNAL_URL="http://{{sys.ip}}:{{cfg.ports.web}}"
+{{/if ~}}
+export CONCOURSE_PEER_URL="http://{{sys.ip}}:{{cfg.ports.web}}"
+export CONCOURSE_POSTGRES_HOST="{{cfg.postgres.host_ip}}"
+export CONCOURSE_POSTGRES_USER="{{cfg.postgres.username}}"
+export CONCOURSE_POSTGRES_PASSWORD="{{cfg.postgres.password}}"
+export CONCOURSE_SESSION_SIGNING_KEY="{{pkg.svc_files_path}}/session_signing_key"
+export CONCOURSE_TSA_HOST_KEY="{{pkg.svc_files_path}}/tsa_host_key"
+export CONCOURSE_TSA_AUTHORIZED_KEYS="{{pkg.svc_files_path}}/authorized_worker_keys"
+export CONCOURSE_TSA_HOST="http://{{sys.ip}}:{{cfg.ports.tsa}}"

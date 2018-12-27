@@ -1,0 +1,13 @@
+[concourse]
+username = "concourse"
+password = "changeme"
+
+[ports]
+web = "8080"
+tsa = "2222"
+
+[postgres]
+host_ip = "localhost"
+username = "concourse"
+password = "changeme"
+
